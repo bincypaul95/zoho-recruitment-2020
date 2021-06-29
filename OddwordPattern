@@ -8,20 +8,21 @@ public static void main(String[] args){
         float middle = (str.length() / 2f);
         int position = (int) Math.ceil(middle) - 1;
         int count = 1;
-        for(int i = position; i < str.length() + middle; i++){
+         for(int i = position; i < str.length() + middle -1 ; i++){
             for(int z = 0; z < str.length() - count + 1; z++){
                 System.out.print(" ");
             }
             for(int j = 0; j < count; j++){
                 int pos = j + position;
-                if( pos >= str.length() + (int) middle)
-                    break;
-                if(pos >= str.length())
-                    pos %= middle;
-                System.out.print(str.charAt(pos));
+                if( pos < str.length() + (int) middle) {
+                    if (pos >= str.length())
+                        pos %= middle;
+                    System.out.print(str.charAt(pos));
+                }
             }
             count++;
             System.out.println();
         }
+
 
     }
